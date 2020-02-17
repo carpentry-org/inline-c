@@ -1,0 +1,11 @@
+(load "main.carp")
+
+(inline-c "long x() { return (1<<30)+12; }")
+(register x (Fn [] Long))
+(inline-c "#include <stdio.h>
+
+long y() { puts(\"inside c!\"); return 42; }")
+(register y (Fn [] Long))
+
+
+(defn main [] (println* (+ (x) (y))))

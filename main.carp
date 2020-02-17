@@ -1,0 +1,9 @@
+(defdynamic *c-counter* 0)
+
+(defndynamic inline-c [s]
+  (let [f (String.join [(Project.get-config "output-directory")
+                        "carp_inline_c_generated" (str *c-counter*) ".h"])]
+    (do
+      (write-file f s)
+      (defdynamic *c-counter* (inc *c-counter*))
+      (system-include f))))
