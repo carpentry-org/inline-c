@@ -5,5 +5,5 @@
                         "carp_inline_c_generated" (str *c-counter*) ".h"])]
     (do
       (write-file f s)
-      (defdynamic *c-counter* (inc *c-counter*))
+      (set! *c-counter* (inc *c-counter*))
       (system-include f))))
