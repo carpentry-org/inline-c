@@ -5,7 +5,7 @@ is a simple module for defining C code inside Carp code.
 ## Installation
 
 ```clojure
-(load "https://veitheller.de/git/carpentry/inline-c@0.0.2")
+(load "https://veitheller.de/git/carpentry/inline-c@0.0.3")
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ express those things that are just kind of awkward in Carp (like complex
 bit-twiddling) without having to include a helper every time.
 
 ```clojure
-(load "https://veitheller.de/git/carpentry/inline-c@0.0.2")
+(load "https://veitheller.de/git/carpentry/inline-c@0.0.3")
 
 (inline-c "int count_set_bits(int n) {
   int count = 0;
