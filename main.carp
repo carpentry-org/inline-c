@@ -1,8 +1,8 @@
 (defdynamic *c-counter* 0)
 
 (defndynamic inline-c [s]
-  (let [f (String.join [(Project.get-config "output-directory")
-                        "carp_inline_c_generated" (str *c-counter*) ".h"])]
+  (let [f (String.concat [(Project.get-config "output-directory")
+                          "carp_inline_c_generated" (str *c-counter*) ".h"])]
     (do
       (write-file f s)
       (set! *c-counter* (inc *c-counter*))
